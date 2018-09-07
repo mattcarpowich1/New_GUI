@@ -1,19 +1,35 @@
+import {
+  LOGIN_REQUEST,
+  LOGIN_SUCCESS,
+  LOGIN_FAILURE
+} from '../constants'
+
 export const initialUserState = {
   displayName: '',
-  userError: false
+  userError: false,
+  userLoading: false
 }
 
 export const User = (state = initialUserState, action) => {
   switch (action.type) {
-    case 'LOGIN_SUCCESS':
+    case LOGIN_REQUEST:
       return {
         ...state,
-        displayName: action.name
+        userLoading: true
       }
-    case 'LOGIN_FAILURE':
+    case LOGIN_SUCCESS:
       return {
         ...state,
-        userError: true
+        displayName: action.displayName,
+        userError: false,
+        userLoading: false
+      }
+    case LOGIN_FAILURE:
+      return {
+        ...state,
+        displayName: '',
+        userError: true,
+        userLoading: false
       }
     default:
       return state

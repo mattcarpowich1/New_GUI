@@ -1,10 +1,10 @@
+import { fakeUser } from '../mock_data'
+
 export const loginUser = () => {
-  const userData = {
-    displayName: 'Matt Carpowich'
-  }
+  const { displayName } = fakeUser
 
   return {
     type: 'LOGIN_SUCCESS',
-    name: userData.displayName
+    displayName
   }
 }

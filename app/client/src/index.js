@@ -4,12 +4,13 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import thunk from 'redux-thunk'
-import { User } from './reducers'
+import { User, Event } from './reducers'
 import './index.css'
 import App from './App'
 
 const rootReducer = combineReducers({
-  User
+  User,
+  Event
 })
 
 const cueStore = createStore(
