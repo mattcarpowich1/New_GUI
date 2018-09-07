@@ -2,19 +2,20 @@ import React, { Component } from 'react'
 import { loginUser } from './actions'
 import { connect } from 'react-redux'
 import Home from './Home'
-import logo from './logo.svg'
+import Logo from './components/Logo'
 import './App.css'
 
 class App extends Component {
   componentDidMount () {
-    this.props.onLogin()
+    const { onLogin } = this.props
+    onLogin()
   }
 
   render () {
     const { isLoggedIn } = this.props
-    console.log(this.props)
     return (
       <div className='App'>
+        <Logo>cue</Logo>
         {
           isLoggedIn && <Home />
         }
@@ -24,8 +25,9 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
+  const { isLoggedIn } = state.User
   return {
-    ...state.User
+    isLoggedIn
   }
 }
 
