@@ -6,6 +6,7 @@ import {
 
 export const initialUserState = {
   displayName: '',
+  isLoggedIn: false,
   userError: false,
   userLoading: false
 }
@@ -22,7 +23,8 @@ export const User = (state = initialUserState, action) => {
         ...state,
         displayName: action.displayName,
         userError: false,
-        userLoading: false
+        userLoading: false,
+        isLoggedIn: true
       }
     case LOGIN_FAILURE:
       return {

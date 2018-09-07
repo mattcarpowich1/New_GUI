@@ -13,6 +13,7 @@ test('User Login', () => {
 
   expect(loadingState).toEqual({
     displayName: '',
+    isLoggedIn: false,
     userError: false,
     userLoading: true
   })
@@ -24,6 +25,7 @@ test('User Login', () => {
 
   expect(successfulState).toEqual({
     displayName: 'Matt Carpowich',
+    isLoggedIn: true,
     userError: false,
     userLoading: false
   })
@@ -34,6 +36,7 @@ test('User Login', () => {
 
   expect(failedState).toEqual({
     displayName: '',
+    isLoggedIn: false,
     userError: true,
     userLoading: false
   })

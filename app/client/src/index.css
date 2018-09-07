@@ -1,5 +1,75 @@
+:root {
+  --lightest-purple: #6D4EE2;
+  --light-purple: #6145C9;
+  --lighter-purple: #5942AE;
+  --purple: #442E98;
+  --darker-purple: #322074;
+  --dark-purple: #281C56;
+  --darkest-purple: #1F173D;
+  --black: #212121;
+  --white: #FEFEF9;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background: var(--light-purple);
+}
+
+div.container {
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+}
+
+ul.tab-list {
+  position: absolute;
+  top: 24px;
+  left: 0px;
+}
+
+li.tab {
+  border-top-right-radius: 36px;
+  border-bottom-right-radius: 36px;
+  background: var(--white);
+  height: 73px;
+  width: 128px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 8px;
+  box-shadow: 0px 0px 24px -5px rgba(33,33,33,0.47);
+  transition: all .3s cubic-bezier(.54,.57,.02,1.39);
+}
+
+li.tab:hover {
+  box-shadow: 10px 10px 24px -5px rgba(33,33,33,0.8);
+  width: 152px;
+  margin-bottom: 6px;
+  transition: all .3s cubic-bezier(.54,.57,.02,1.39);
+}
+
+li.tab:nth-child(1) {
+  background-color: var(--black);
+  color: var(--lightest-purple);
+}
+
+li.tab:nth-child(2) button {
+  color: var(--lightest-purple);
+}
+
+li.tab button {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 24px;
+  font-family: 'Varela Round', sans-serif;
+  margin-right: 16px;
+  outline: none;
+}
+
+li.tab button:hover {
+  cursor: pointer;
 }
